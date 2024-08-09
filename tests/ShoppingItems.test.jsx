@@ -34,9 +34,11 @@ describe("ShoppingItems Component", () => {
       },
     ]);
 
+    const addToCart = vi.fn();
+
     render(
       <MemoryRouter>
-        <ShoppingItems />
+        <ShoppingItems addToCart={addToCart} cartItems={[]}/>
       </MemoryRouter>
     );
 
@@ -44,15 +46,5 @@ describe("ShoppingItems Component", () => {
       expect(screen.getByText("Item 1")).toBeInTheDocument();
       expect(screen.getByText("Item 2")).toBeInTheDocument();
     });
-  });
-
-  test("navigates to checkout page on click", () => {
-    render(
-      <MemoryRouter>
-        <ShoppingItems />
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText("Checkout")).toBeInTheDocument();
   });
 });

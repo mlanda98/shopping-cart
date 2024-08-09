@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchStoreItems } from "./api";
-import ShoppingCart from "./shoppingCart";
-import { Link } from "react-router-dom";
+import ShoppingCart from "./ShoppingCart";
 
-function ShoppingItems() {
+function ShoppingItems({addToCart, cartItems}) {
   const [items, setItems] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const loadItems = async () => {
@@ -15,17 +13,9 @@ function ShoppingItems() {
     loadItems();
   }, []);
 
-  const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
-  };
-
-  const removeFromCart = (itemId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
-  };
-
   return (
     <div>
-      <ShoppingCart cartItems={cart} />
+      <ShoppingCart cartItems={cartItems} />
       <h2>Shopping Items</h2>
       <div>
         {items.map((item) => (
@@ -38,9 +28,6 @@ function ShoppingItems() {
           </div>
         ))}
       </div>
-      <Link to="/checkout">
-        <button>Checkout</button>
-      </Link>
     </div>
   );
 }
