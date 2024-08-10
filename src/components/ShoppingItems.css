@@ -1,4 +1,59 @@
 img{
   width: 100px;
-  height: 100px;
+}
+
+.items-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.items-grid div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.items-grid img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.items-grid h3{
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.items-grid p{
+  font-size: 1.1em;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.items-grid button{
+  background-color: white;
+  border: 1px solid grey;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+
+}
+
+.cart-items{
+  position: fixed;
+  background-color: white;
+  right:20px;
+  top: -40px;
+}
+.title{
+  margin-left: 50px;
 }

@@ -1,0 +1,27 @@
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+li{
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+.checkout-title{
+  margin-left: 20px;
+}
+
+button{
+  background-color: white;
+  border: 1px solid grey;
+  padding: 10px 20px;
+}
+
+.cont-button{
+  margin-left: 20px;
+}
+
+.empty{
+  margin-left: 20px;
+}
