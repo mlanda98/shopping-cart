@@ -1,4 +1,4 @@
-const url = "https://fakestoreapi.com/products";
+const url = "https://fakestoreapi.com/products/category/electronics";
 
 export const fetchStoreItems = async () => {
   try {
