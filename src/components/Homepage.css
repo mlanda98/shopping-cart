@@ -1,38 +1,130 @@
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0px;
-  margin: 0px;
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Montserrat&display=swap");
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: 0;
 }
 
-img{
+.page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0f172a 30%, #38bdf8 60%, #f8fafc 90%);
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img {
   width: 165px;
 }
 
-.header{
+.header {
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 20px 40px;
+}
+
+.container {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #0b7fd8;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #10466a;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+.logo-title {
+  display: flex;
   align-items: center;
 }
 
-h1{
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 36px;
+  color: white;
+  margin-left: 15px;
+}
+
+.info h2 {
   font-size: 40px;
+  margin-bottom: 10px;
+  color: white;
 }
 
-h2{
-  font-size: 45px;
+h1, .info h2, .info p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.main{
+main{
   display: flex;
-  justify-content: center;
-  gap: 90px;
-  margin-top: 100px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 80px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  min-height: 80hv;
 }
 
-p{
-  font-size: 25px;
-}
-.main-pic{
-  width: 400px;
+.info p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: white;
 }
 
+.main-pic {
+  width: 420px;
+  border-radius: 12px;
+}
+
+.shop-button {
+  text-decoration: none;
+  padding: 12px 25px;
+  background-color: #10466a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(11, 127, 216, 0.3);
+}
+
+.shop-button:hover {
+  background-color: #09a8f2;
+}
