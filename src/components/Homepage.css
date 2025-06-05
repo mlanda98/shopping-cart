@@ -9,7 +9,7 @@ html {
 
 .page-wrapper {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #0f172a 30%, #38bdf8 60%, #f8fafc 90%);
+  background:  linear-gradient(to bottom right, #0f172a 30%, #38bdf8 60%, #f8fafc 90%);
   color: #0f172a;
   display: flex;
   flex-direction: column;

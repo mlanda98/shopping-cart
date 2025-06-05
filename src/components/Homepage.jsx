@@ -25,7 +25,7 @@ function Homepage() {
             <Link to="/shopping" className="shop-button">Start Shopping</Link>
           </div>
           <div className="pic">
-            <img className="main-pic" src="./src/vr-set.PNG" alt="jeans-pic"/>
+            <img className="main-pic" src="./src/vr-set.PNG" alt="vr-set"/>
           </div>
         </main>
     </div>
