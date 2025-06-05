@@ -99,7 +99,7 @@ img {
 
 .image-wrapper {
   width: 100%;
-  height: 120px;
+  height: 70px;
   display: flex;
   background: none;
   padding:0;
@@ -199,7 +199,8 @@ html {
 /* Medium Screen */
 @media (min-width: 768px){
   .items-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
   .shopping-header {
@@ -208,6 +209,7 @@ html {
 
   .page-title {
     font-size: 1.8rem;
+    margin-left: 60px;
   }
 }
 
