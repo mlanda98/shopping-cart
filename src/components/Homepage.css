@@ -16,7 +16,8 @@ html {
   align-items: center;
 }
 img {
-  width: 165px;
+  width: max-width 100%;
+  height: auto;
 }
 
 .header {
@@ -110,7 +111,8 @@ main{
 }
 
 .main-pic {
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   border-radius: 12px;
 }
 
@@ -127,4 +129,82 @@ main{
 
 .shop-button:hover {
   background-color: #09a8f2;
+}
+
+/* --Large Screens--*/
+@media (max-width: 1024px) {
+  .container{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  info h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .info p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+}
+
+/*--Small Screens--*/
+@media (max-width: 600px){
+  .container {
+    padding: 10px 20px;
+  }
+
+  .nav{
+    justify-content: center;
+  }
+
+  .shop-button {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .main-pic {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, .info h2, .info p {
+    text-align: center;
+  }
 }
