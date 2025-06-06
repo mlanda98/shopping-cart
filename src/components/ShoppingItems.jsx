@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { fetchStoreItems } from "./StoreApi";
-import ShoppingCart from "./ShoppingCart";
 import "./ShoppingItems.css";
 import { Link } from "react-router-dom";
 
