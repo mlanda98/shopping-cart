@@ -4,8 +4,9 @@ import { fetchStoreItems } from "./StoreApi";
 import "./ShoppingItems.css";
 import { Link } from "react-router-dom";
 
-function ShoppingItems({addToCart, cartItems}) {
+function ShoppingItems({ addToCart, cartItems }) {
   const [items, setItems] = useState([]);
+  const [sortOrder, setSortOrder] = useState("lowToHigh");
 
   useEffect(() => {
     const loadItems = async () => {
@@ -14,6 +15,18 @@ function ShoppingItems({addToCart, cartItems}) {
     };
     loadItems();
   }, []);
+
+  const handleSort = (value) => {
+    setSortOrder(value);
+  };
+
+  const getSortedItems = () => {
+    if (sortOrder === "highToLow") {
+      return [...items].sort((a, b) => b.price - a.price);
+    }
+
+    return items;
+  };
 
   return (
     <div className="shopping-page">
@@ -32,10 +45,12 @@ function ShoppingItems({addToCart, cartItems}) {
               {" "}
               Cart
               <span className="cart-count">
-                ({cartItems.reduce(
+                (
+                {cartItems.reduce(
                   (total, item) => total + (item.quantity || 1),
                   0
-                )})
+                )}
+                )
               </span>
             </Link>
           </div>
@@ -44,8 +59,16 @@ function ShoppingItems({addToCart, cartItems}) {
 
       <h2 className="page-title">Shopping Items</h2>
 
+      <div className="sort-filter">
+        <label htmlFor="sort">Sort By:</label>
+        <select id="sort" onChange={(e) => handleSort(e.target.value)}>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
+      </div>
+
       <div className="items-grid">
-        {items.map((item) => (
+        {getSortedItems().map((item) => (
           <div key={item.id}>
             <div className="image-wrapper">
               <img src={item.image} alt={item.name}></img>
@@ -63,6 +86,6 @@ function ShoppingItems({addToCart, cartItems}) {
 ShoppingItems.propTypes = {
   addToCart: PropTypes.func.isRequired,
   cartItems: PropTypes.array.isRequired,
-}
+};
 
 export default ShoppingItems;
