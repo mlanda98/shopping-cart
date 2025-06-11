@@ -1,8 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { fetchStoreItems } from "./StoreApi";
-import "./ShoppingItems.css";
+import "../styles/ShoppingItems.css";
 import { Link } from "react-router-dom";
+import logo from "../pictures/logo.png"
 
 function ShoppingItems({ addToCart, cartItems }) {
   const [items, setItems] = useState([]);
@@ -33,7 +35,7 @@ function ShoppingItems({ addToCart, cartItems }) {
       <header className="shopping-header">
         <div className="shopping-nav">
           <div className="left-side">
-            <img className="logo" src="./src/logo.PNG" alt="logo" />
+            <img className="logo" src={logo} alt="logo" />
             <h1 className="store-name"> SmartTech</h1>
           </div>
 

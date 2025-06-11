@@ -1,44 +1,25 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { describe, test, expect, vi, beforeEach } from "vitest";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event"
+import { describe, expect, vi, it } from "vitest";
+import ShoppingItems from "../src/components/ShoppingItems.jsx";
+import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import ShoppingItems from "../src/components/ShoppingItems";
-import { fetchStoreItems } from "../src/components/api";
-import "@testing-library/jest-dom"
 
-
-vi.mock("../src/components/api", () => ({
-  fetchStoreItems: vi.fn(),
+vi.mock("../src/components/StoreApi.jsx", () => ({
+  fetchStoreItems: () =>
+    Promise.resolve([
+      { id: 1, title: "Item 1", price: 10, image: "image1.jpg" },
+      { id: 2, title: "Item 2", price: 20, image: "image2.jpg" },
+    ]),
 }));
 
 describe("ShoppingItems Component", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
-  test("renders shopping items and cart component", async () => {
-    fetchStoreItems.mockResolvedValue([
-      {
-        id: 1,
-        name: "Item 1",
-        description: "Description 1",
-        price: "$10.00",
-        image: "image1.jpg",
-      },
-      {
-        id: 2,
-        name: "Item 2",
-        description: "Description 2",
-        price: "$20.00",
-        image: "image2.jpg",
-      },
-    ]);
-
-    const addToCart = vi.fn();
-
+  it("renders shopping items and cart component", async () => {
     render(
       <MemoryRouter>
-        <ShoppingItems addToCart={addToCart} cartItems={[]}/>
+        <ShoppingItems addToCart={() => {}} cartItems={[]} />
       </MemoryRouter>
     );
 
@@ -47,4 +28,20 @@ describe("ShoppingItems Component", () => {
       expect(screen.getByText("Item 2")).toBeInTheDocument();
     });
   });
+
+  it("calls addToCart when Add To Cart button is clicked", async () => {
+    const addToCartMock = vi.fn();
+    render(
+    <MemoryRouter
+    ><ShoppingItems addToCart={addToCartMock} cartItems={[]} />;
+    </MemoryRouter>
+    )
+    await waitFor(() => screen.getByText("Item 1"));
+
+    const addButton = screen.getAllByText(/Add To Cart/i)[0];
+    await userEvent.click(addButton);
+
+    expect(addToCartMock).toHaveBeenCalled();
+  });
+  
 });

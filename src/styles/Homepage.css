@@ -10,7 +10,12 @@ html {
 
 .page-wrapper {
   min-height: 100vh;
-  background:  linear-gradient(to bottom right, #0f172a 30%, #38bdf8 60%, #f8fafc 90%);
+  background: linear-gradient(
+    to bottom right,
+    #0f172a 30%,
+    #38bdf8 60%,
+    #f8fafc 90%
+  );
   color: #0f172a;
   display: flex;
   flex-direction: column;
@@ -88,11 +93,13 @@ h1 {
   color: white;
 }
 
-h1, .info h2, .info p {
+h1,
+.info h2,
+.info p {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-main{
+main {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -134,7 +141,7 @@ main{
 
 /* --Large Screens--*/
 @media (max-width: 1024px) {
-  .container{
+  .container {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
@@ -181,16 +188,15 @@ main{
     font-size: 28px;
     text-align: center;
   }
-
 }
 
 /*--Small Screens--*/
-@media (max-width: 600px){
+@media (max-width: 600px) {
   .container {
     padding: 10px 20px;
   }
 
-  .nav{
+  .nav {
     justify-content: center;
   }
 
@@ -205,7 +211,9 @@ main{
     height: auto;
   }
 
-  h1, .info h2, .info p {
+  h1,
+  .info h2,
+  .info p {
     text-align: center;
   }
 }

@@ -8,8 +8,8 @@ export const fetchStoreItems = async () => {
     }
     const data = await response.json();
     return data;
-  } catch (error){
+  } catch (error) {
     console.error("Failed to fetch items:", error);
     return [];
   }
-}
+};
