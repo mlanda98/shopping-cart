@@ -1,12 +1,12 @@
-# shopping-cart
+# 🛒 Electronics Store - Shopping Cart Project
 
-A mock shopping cart built with React, using modern tools like React Router and React Testing Library. This project demonstrates component-based architecture, routing, state management, form inputs, API fetching, and UI testing.
+A responsive mock shopping cart for an electronics store built with React, using modern tools like React Router and React Testing Library. This project demonstrates component-based architecture, routing, state management, form inputs, API fetching, and UI testing.
 
 ---
 🔗 Links
 
-- [Live Demo](https://mlanda98.github.io/battleship/)
-- [Repository](https://github.com/mlanda98/battleship)
+- [Live Demo](shopping-cart-production-15ea.up.railway.app)
+- [Repository](https://github.com/mlanda98/shopping-cart)
 
 ---
 
