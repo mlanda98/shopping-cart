@@ -5,7 +5,7 @@ A responsive mock shopping cart for an electronics store built with React, using
 ---
 🔗 Links
 
-- [Live Demo](shopping-cart-production-15ea.up.railway.app)
+- [Live Demo](https://shopping-cart-production-15ea.up.railway.app)
 - [Repository](https://github.com/mlanda98/shopping-cart)
 
 ---
